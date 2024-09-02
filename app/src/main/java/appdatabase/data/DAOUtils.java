@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import javax.management.RuntimeErrorException;
-
 public class DAOUtils {
     public static Connection localConnection (String database, String username, String password) {
         try {
@@ -15,7 +13,7 @@ public class DAOUtils {
             var connectionString = "jdbc:mysql://" + host + ":" + port + "/" + database;
             return DriverManager.getConnection(connectionString, username, password);
         } catch (Exception e) {
-            throw new RuntimeErrorException(null);
+            throw new DAOException(e);
         }
     }
 
