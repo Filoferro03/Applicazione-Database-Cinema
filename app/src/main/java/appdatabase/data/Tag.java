@@ -31,9 +31,9 @@ public final class Tag {
     }
 
     public final class DAO {
-        public static Set<Tag> ofProduct (Connection connection, int productId) {
+        public static Set<Tag> ofScreening (Connection connection, int ScreeningId) {
             var tags = new HashSet<Tag>();
-            try (var statement = DAOUtils.prepare(connection, null, productId);
+            try (var statement = DAOUtils.prepare(connection, null, ScreeningId);
             var resultSet = statement.executeQuery();) {
                 while (resultSet.next()) {
                     var tagName = resultSet.getString("tag_name");
