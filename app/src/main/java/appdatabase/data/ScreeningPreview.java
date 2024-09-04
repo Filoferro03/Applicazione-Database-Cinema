@@ -35,7 +35,7 @@ public final class ScreeningPreview {
                     var hour = resultSet.getTime("ora");
                     var location = resultSet.getString("nomeSede");
                     var preview = new ScreeningPreview(code, title, date, hour, location);
-                    previews.add(preview);
+                    previews.add(preview); 
                 }
             } catch (SQLException e) {
                 throw new DAOException(e);

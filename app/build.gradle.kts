@@ -7,28 +7,34 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
+    id 'java'
     id 'application'
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
-}
+} 
+
+val javaFXModules = listOf(
+    "base",
+    "controls",
+    "fxml",
+    "swing",
+    "graphics"
+)
 
 dependencies {
-    // Use JUnit Jupiter for testing.
-    testImplementation libs.junit.jupiter
+    val jUnitVersion = "5.10.2"
+    // JUnit API and testing engine
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
 
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-    // This dependency is used by the application.
-    implementation libs.guava
-}
-
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+    val javaFxVersion = 15
+    for (platform in supportedPlatforms) {
+        for (module in javaFXModules) {
+            implementation("org.openjfx:javafx-$module:$javaFxVersion:$platform")
+        }
     }
 }
 
@@ -37,7 +43,7 @@ application {
     mainClass = 'appdatabase.App'
 }
 
-tasks.named('test') {
+tasks.withType<Test> {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
