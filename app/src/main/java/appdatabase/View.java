@@ -1,5 +1,5 @@
 package appdatabase;
 
-public class View extends Application {
+public class View {
 
 }
