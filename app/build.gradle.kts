@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     java
+    id("org.openjfx.javafxplugin") version "0.0.14"
 }
 
 repositories {
@@ -18,20 +19,15 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation (libs.junit.jupiter)
-
-    testRuntimeOnly ("org.junit.platform:junit-platform-launcher")
-    implementation ("org.openjfx:javafx-base:20.0.2")
-    implementation ("org.openjfx:javafx-controls:20.0.2")
-    implementation ("org.openjfx:javafx-graphics:20.0.2")
-    implementation ("org.openjfx:javafx-fxml:20.0.2")
+     val jUnitVersion = "5.10.2"
+    // JUnit API and testing engine
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
 }
 
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+javafx {
+    version = "17.0.2"
+    modules = listOf("javafx.controls", "javafx.fxml")
 }
 
 application {
