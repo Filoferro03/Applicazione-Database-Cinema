@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.5151515151515151" orientation="VERTICAL" prefHeight="398.0" prefWidth="175.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="39.0" text="Esci" />
+                              <TextArea layoutX="14.0" layoutY="48.0" prefHeight="143.0" prefWidth="148.0" />
+                              <Button layoutX="89.0" layoutY="14.0" mnemonicParsing="false" text="Acquisti" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="173.0">
+                           <children>
+                              <DatePicker layoutX="22.0" layoutY="21.0" prefHeight="19.0" prefWidth="130.0" promptText="Seleziona data" />
+                              <ChoiceBox layoutX="87.0" layoutY="61.0" prefHeight="25.0" prefWidth="66.0" />
+                              <Label layoutX="22.0" layoutY="61.0" prefHeight="25.0" prefWidth="39.0" text="Sede" />
+                              <Label layoutX="22.0" layoutY="104.0" prefHeight="25.0" prefWidth="47.0" text="Genere" />
+                              <ChoiceBox layoutX="87.0" layoutY="104.0" prefHeight="25.0" prefWidth="66.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.07323232323232323" layoutX="1.0" layoutY="1.0" orientation="VERTICAL" prefHeight="398.0" prefWidth="417.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label layoutX="166.0" layoutY="-4.0" prefHeight="34.0" prefWidth="84.0" text="PROIEZIONI" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TableView prefHeight="364.0" prefWidth="415.0">
+                                <columns>
+                                  <TableColumn prefWidth="115.0" text="TITOLO" />
+                                  <TableColumn prefWidth="47.0" text="POSTI" />
+                                    <TableColumn prefWidth="76.0" text="SEDE" />
+                                    <TableColumn prefWidth="71.0" text="DATA" />
+                                    <TableColumn prefWidth="50.0" text="ORA" />
+                                    <TableColumn prefWidth="55.0" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

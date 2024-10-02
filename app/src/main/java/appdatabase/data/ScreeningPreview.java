@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class ScreeningPreview {
-    public final int code;
+    public final int seatNum;
     public final String title;
     public final Date date;
     public final Time hour;
     public final String location;
 
-    public ScreeningPreview(int code, String title, Date date, Time hour, String location) {
-        this.code=code;
+    public ScreeningPreview(String title, int seatNum, Date date, Time hour, String location) {
+        this.seatNum=seatNum;
         this.title=title;
         this.date=date;
         this.hour=hour;
@@ -29,12 +29,12 @@ public final class ScreeningPreview {
             var resultSet = statement.executeQuery();
             ) {
                 while (resultSet.next()) {
-                    var code = resultSet.getInt("codProiezione");
+                    var seatNum = resultSet.getInt("postiDisponibili");
                     var title = resultSet.getString("titolo");
                     var date = resultSet.getDate("data");
                     var hour = resultSet.getTime("ora");
                     var location = resultSet.getString("nomeSede");
-                    var preview = new ScreeningPreview(code, title, date, hour, location);
+                    var preview = new ScreeningPreview(title, seatNum, date, hour, location);
                     previews.add(preview); 
                 }
             } catch (SQLException e) {
