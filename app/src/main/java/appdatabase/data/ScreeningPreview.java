@@ -29,11 +29,11 @@ public final class ScreeningPreview {
             var resultSet = statement.executeQuery();
             ) {
                 while (resultSet.next()) {
-                    var seatNum = resultSet.getInt("postiDisponibili");
-                    var title = resultSet.getString("titolo");
-                    var date = resultSet.getDate("data");
-                    var hour = resultSet.getTime("ora");
-                    var location = resultSet.getString("nomeSede");
+                    var seatNum = resultSet.getInt("PostiDisponibili");
+                    var title = resultSet.getString("Titolo");
+                    var date = resultSet.getDate("Data");
+                    var hour = resultSet.getTime("Ora");
+                    var location = resultSet.getString("NomeSede");
                     var preview = new ScreeningPreview(title, seatNum, date, hour, location);
                     previews.add(preview); 
                 }

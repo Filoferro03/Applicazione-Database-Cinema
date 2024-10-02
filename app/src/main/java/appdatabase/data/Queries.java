@@ -4,9 +4,9 @@ public final class Queries {
     
     public static final String LIST_SCREENING = 
     """
-    select PROIEZIONI.codProiezione, FILM.titolo, PROIEZIONI.data, PROIEZIONI.ora, PROIEZIONI.nomeSede
+    select FILM.Titolo, PROIEZIONE.PostiDisponibili, PROIEZIONI.Data, PROIEZIONI.Ora, PROIEZIONI.NomeSede
     from PROIEZIONI, FILM
-    where PROIEZIONI.codFilm = FILM.codFilm
+    where PROIEZIONI.CodFilm = FILM.CodFilm
     """;
 
 }
