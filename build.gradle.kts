@@ -8,8 +8,6 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-    java
-    id("org.openjfx.javafxplugin") version "0.0.14"
 }
 
 repositories {
@@ -17,20 +15,36 @@ repositories {
     mavenCentral()
 }
 
+val javaFXModules = listOf(
+    "base",
+    "controls",
+    "fxml",
+    "swing",
+    "graphics"
+)
+
+val supportedPlatforms = listOf("linux", "mac", "win")
+
 dependencies {
     // Use JUnit Jupiter for testing.
      val jUnitVersion = "5.10.2"
     // JUnit API and testing engine
     testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
+    val javaFxVersion = 15
+    for (platform in supportedPlatforms) {
+        for (module in javaFXModules) {
+            implementation("org.openjfx:javafx-$module:$javaFxVersion:$platform")
+        }
+    }
 }
 
-javafx {
-    version = "17.0.2"
-    modules = listOf("javafx.controls", "javafx.fxml")
+tasks.withType<Test> {
+    // Enables JUnit 5 Jupiter module
+    useJUnitPlatform()
 }
 
 application {
-    // Define the main class for the application.
-    mainClass = "appdatabase.Main"
+    // Define the main class for the application
+    mainClass.set("Main")
 }

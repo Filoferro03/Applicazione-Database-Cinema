@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appdatabase.javafxController.loginController">
    <children>
       <TextArea layoutX="151.0" layoutY="162.0" prefHeight="7.0" prefWidth="182.0" promptText="Inserisci il tuo codice fiscale" />
       <Button layoutX="400.0" layoutY="168.0" mnemonicParsing="false" text="Accedi" />
