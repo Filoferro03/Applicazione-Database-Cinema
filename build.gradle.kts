@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    java
 }
 
 repositories {
@@ -44,7 +45,9 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+val main: String by project
+
 application {
     // Define the main class for the application
-    mainClass.set("Main")
+    mainClass.set(main)
 }
